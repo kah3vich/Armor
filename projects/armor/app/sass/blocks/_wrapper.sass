@@ -1,0 +1,12 @@
+.wrapper
+	display: block
+	height: 100%
+	margin: 0 auto
+	max-width: sizeParam($WRAPPER-BOX)
+	padding: 0 sizeParam($SMALL-WRAPPER)
+	width: 100%
+	+addPoint($MAX-POINT, width, min)
+		max-width: sizeParam($WRAPPER-BOX, vw)
+		padding: 0 sizeParam($SMALL-WRAPPER, vw)
+	// +addPoint($WRAPPER)
+	// +addPoint($D)

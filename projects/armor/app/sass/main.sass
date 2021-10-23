@@ -1,0 +1,91 @@
+// Общая конфигурация проекта:
+@import '_settings.sass'
+@import '../../../_config.sass'
+
+// 100 - Thin
+// 200 - ExtraLight
+// 300 - Light
+// 400 - Regular
+// 500 - Medium
+// 600 - SemiBold
+// 700 - Bold
+// 800 - ExtraBold
+// 900 - Black
+
++addFont('TTNorms-Light', 300)
++addFont('TTNorms-Regular', 400)
++addFont('TTNorms-Medium', 500)
+
+// Общие настройки всех элементов:
+*, *::after, *::before
+	box-sizing: border-box
+	color: currentColor
+	@if $CURSOR-DEFAULT != default {cursor: $CURSOR-DEFAULT}
+	font-family: inherit
+	font-size: inherit
+	font-weight: inherit
+	line-height: inherit
+	list-style: none
+	margin: 0
+	outline: 0
+	overflow-anchor: none
+	padding: 0
+	position: relative
+	scroll-behavior: smooth
+	text-decoration: none
+	transition: all $TRS
+
+// Сброс взаимодествия с декоративными элементами:
+.el-decor, *::after, *::before
+	pointer-events: none
+
+// Настройки страницы:
+html, body
+	height: 100%
+
+body
+	background-color: $COLOR-DARK
+	color: $COLOR-WHITE
+	font-family: $FONT-GENERAL
+	font-size: sizeParam($FONT-MIN)
+	font-weight: normal
+	line-height: $STRING-TEXT
+	overflow-x: hidden
+	+addPoint($MAX-POINT, width, min)
+		font-size: sizeParam($FONT-MIN, vw)
+	// +addPoint($WRAPPER)
+	// +addPoint($D)
+
+// Кнопоки, ссылки и поля ввода:
+button, input, textarea
+	background-color: $COLOR-NO
+	border: none
+	cursor: $CURSOR-POINTER
+	&:disabled
+		cursor: not-allowed
+
+textarea
+	overflow: hidden
+	resize: none
+
+// Заголовки:
+h1, h2, h3, h4, h5, h6
+	line-height: $STRING-HEAD
+
+@import '_slick.scss'
+@import 'blocks/_wrapper'
+@import 'blocks/_btn'
+@import 'blocks/_arrow'
+@import 'blocks/_glare'
+@import 'blocks/_header'
+@import 'blocks/_social'
+@import 'blocks/_first'
+@import 'blocks/_preview'
+@import 'blocks/_devices'
+@import 'blocks/_types'
+@import 'blocks/_pain'
+@import 'blocks/_photos'
+@import 'blocks/_reviews'
+@import 'blocks/_in-youtube'
+@import 'blocks/_discount'
+@import 'blocks/_footer'

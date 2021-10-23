@@ -1,0 +1,66 @@
+.reviews
+	padding: 70px 0 20px
+	&__wrap
+		margin-bottom: 70px
+	&__subtitle
+		@extend .preview__subtitle
+	&__title
+		@extend .preview__title
+		margin-bottom: 0
+	&__list
+		margin:
+			bottom: 50px
+			left: auto
+		width: 75%
+	&__item
+		padding-right: 40px
+		width: 296px
+		&::before
+			background-color: rgba($COLOR-BLACK, .8)
+			content: ''
+			height: 100%
+			left: 0
+			position: absolute
+			top: 0
+			width: 100%
+			z-index: 1
+		&-img
+			height: auto
+			width: 100%
+		&.slick-current
+			&::before
+				opacity: 0
+	&__arrows
+		justify-content: flex-end
+	+addPoint($MAX-POINT, width, min)
+		padding: sizeParam(70, vw) 0 sizeParam(20, vw)
+		&__wrap
+			margin-bottom: sizeParam(70, vw)
+		&__list
+			margin-bottom: sizeParam(50, vw)
+		&__item
+			padding-right: sizeParam(40, vw)
+			width: sizeParam(296, vw)
+	+addPoint($WRAPPER)
+		padding-top: sizeParam(70, from, 40, $WRAPPER)
+		&__wrap
+			margin-bottom: sizeParam(70, from, 40, $WRAPPER)
+		&__list
+			margin:
+				bottom: sizeParam(50, from, 30, $WRAPPER)
+				left: sizeParam(sizeParam(25, '%%', $WRAPPER), from, 20, $WRAPPER)
+			width: auto
+		&__item
+			padding-right: sizeParam(40, from, 20, $WRAPPER)
+			width: sizeParam(296, from, 220, $WRAPPER)
+	+addPoint($D)
+		padding-top: sizeParam(70, from, 40, $WRAPPER)
+		&__wrap
+			margin-bottom: sizeParam(70, to, 40, $WRAPPER)
+		&__list
+			margin:
+				bottom: sizeParam(50, to, 30, $WRAPPER)
+				left: sizeParam(sizeParam(25, '%%', $WRAPPER), to, 20, $WRAPPER)
+		&__item
+			padding-right: sizeParam(40, to, 20, $WRAPPER)
+			width: sizeParam(296, to, 220, $WRAPPER)

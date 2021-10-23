@@ -1,0 +1,104 @@
+.pain
+	padding: 100px 0 110px
+	&__title
+		font-size: 30px
+		margin-bottom: 100px
+		text-align: center
+		&::before
+			background-color: $COLOR-DARK-GREY-43
+			content: ''
+			display: block
+			height: 1px
+			margin: 0 auto 20px
+			min-width: 100px
+			width: 12.5%
+	&__list
+		display: flex
+		border:
+			left: 1px solid $COLOR-DARK-GREY-43
+			right: 1px solid $COLOR-DARK-GREY-43
+	&__item
+		font-family: $FONT-LIGHT
+		font-size: 17px
+		font-weight: 300
+		padding: 0 15px
+		text-align: center
+		width: percentage(1/3)
+		&:nth-child(even)
+			border:
+				left: 1px solid $COLOR-DARK-GREY-43
+				right: 1px solid $COLOR-DARK-GREY-43
+	&__icon
+		display: block
+		margin: -30px auto 30px
+		&--1
+			height: 69px
+			width: 57px
+		&--2
+			height: 72px
+			width: 74px
+		&--3
+			height: 61px
+			width: 57px
+	+addPoint($MAX-POINT, width, min)
+		&__title
+			font-size: sizeParam(30, vw)
+			margin-bottom: sizeParam(100, vw)
+			&::before
+				height: sizeParam(1, vw)
+				margin-bottom: sizeParam(20, vw)
+				min-width: sizeParam(100, vw)
+		&__list
+			display: flex
+			border-left-width: sizeParam(1, vw)
+			border-right-width: sizeParam(1, vw)
+		&__item
+			font-size: sizeParam(17, vw)
+			padding: 0 sizeParam(15, vw)
+			&:nth-child(even)
+				border-left-width: sizeParam(1, vw)
+				border-right-width: sizeParam(1, vw)
+		&__icon
+			display: block
+			margin: sizeParam(-30, vw) auto sizeParam(30, vw)
+			&--1
+				height: sizeParam(69, vw)
+				width: sizeParam(57, vw)
+			&--2
+				height: sizeParam(72, vw)
+				width: sizeParam(74, vw)
+			&--3
+				height: sizeParam(61, vw)
+				width: sizeParam(57, vw)
+	+addPoint($WRAPPER)
+		&__title
+			font-size: sizeParam(30, from, 26, $WRAPPER)
+			margin-bottom: sizeParam(100, from, 40, $WRAPPER)
+	+addPoint($E)
+		&__title
+			&::before
+				display: none
+		&__list
+			border: none
+			display: block
+		&__item
+			width: 100%
+			&:nth-child(even)
+				border: none
+			&:not(:last-child)
+				margin-bottom: 40px
+		&__icon
+			margin:
+				bottom: sizeParam(30, from, 20, $E)
+				top: 0
+	+addPoint($D)
+		&__title
+			font-size: sizeParam(30, to, 26, $WRAPPER)
+			margin-bottom: sizeParam(100, to, 40, $WRAPPER)
+		&__icon
+			margin-bottom: sizeParam(30, to, 20, $E)
+	+addPoint($A)
+		&__title
+			text-align: left
+		&__item br
+			display: none

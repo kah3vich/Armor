@@ -1,0 +1,49 @@
+.glare
+	display: block
+	position: absolute
+	z-index: 1
+	&--mini
+		height: sizeParam($glareSize)
+		opacity: .8
+		width: sizeParam($glareSize)
+	&--big
+		height: sizeParam($glareSize*1.25)
+		opacity: .3
+		width: sizeParam($glareSize*1.25)
+	&::before, &::after
+		content: ''
+		display: block
+		filter: blur(100px)
+		height: 100%
+		position: absolute
+		transform: matrix(-0.97, 0.19, -0.27, -0.98, 0, 0)
+		width: 100%
+	&::after
+		background: linear-gradient(180deg, rgba(0, 194, 255, 0) 0%, #7B29FF 100%)
+		z-index: 1
+	&::before
+		background: linear-gradient(180deg, rgba(24, 75, 255, 0) 0%, #174AFF 100%);
+		z-index: 2
+	+addPoint($MAX-POINT, width, min)
+		&--mini
+			height: sizeParam($glareSize, vw)
+			width: sizeParam($glareSize, vw)
+		&--big
+			height: sizeParam($glareSize*1.25, vw)
+			width: sizeParam($glareSize*1.25, vw)
+		&::before, &::after
+			filter: blur(#{sizeParam(100, vw)})
+	+addPoint($WRAPPER)
+		&--mini
+			height: sizeParam($glareSize, from, $glareMinSize, $WRAPPER)
+			width: sizeParam($glareSize, from, $glareMinSize, $WRAPPER)
+		&--big
+			height: sizeParam($glareSize*1.25, from, $glareMinSize, $WRAPPER)
+			width: sizeParam($glareSize*1.25, from, $glareMinSize, $WRAPPER)
+	+addPoint($D)
+		&--mini
+			height: sizeParam($glareSize, to, $glareMinSize, $WRAPPER)
+			width: sizeParam($glareSize, to, $glareMinSize, $WRAPPER)
+		&--big
+			height: sizeParam($glareSize*1.25, to, $glareMinSize, $WRAPPER)
+			width: sizeParam($glareSize*1.25, to, $glareMinSize, $WRAPPER)

@@ -1,0 +1,217 @@
+.first
+	align-items: center
+	background: url('../img/first/first-bg.jpg') center no-repeat
+	background-size: cover
+	display: flex
+	height: 100%
+	margin-bottom: 100px
+	min-height: sizeParam($headerHeight + 640)
+	overflow: hidden
+	padding-top: sizeParam($headerHeight)
+	&::before
+		background: linear-gradient(103.3deg, #1C2739 0%, #161B24 100%)
+		content: ''
+		display: block
+		height: 100%
+		left: 0
+		opacity: .3
+		position: absolute
+		top: 0
+		width: 100%
+		z-index: 1
+	&__wrap
+		height: auto
+		z-index: 2
+	&__up
+		z-index: 2
+	&__title
+		font-family: $FONT-MEDIUM
+		font-size: 50px
+		font-weight: 500
+		margin-bottom: 40px
+	&__quality
+		align-items: center
+		display: flex
+		left: 50%
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+	&__iphone
+		display: flex
+		margin:
+			left: sizeParam(-$firstIphoneWidth/2)
+			right: 60px
+		z-index: 1
+		&-img
+			height: auto
+			width: sizeParam($firstIphoneWidth)
+			z-index: 2
+	&__glare
+		top: 50%
+		left: 50%
+		transform: rotate($glareAngle) translate(50%, 50%)
+	&__list
+		counter-reset: item
+	&__item
+		font-size: 17px
+		padding-left: 30px
+		&-line
+			align-items: center
+			display: flex
+			position: absolute
+			right: 100%
+			top: 50%
+			transform: translateY(-50%)
+			&::before, &::after
+				display: block
+				content: ''
+			&::before
+				background-color: $COLOR-WHITE
+				border-radius: 50%
+				box-shadow: 0 0 0 3px rgba($COLOR-GREY-94, .5), 0 0 0 6px rgba($COLOR-GREY-94, .3)
+				height: 21px
+				width: 21px
+			&::after
+				background-color: $COLOR-GREY-9F
+				height: 1px
+				flex-grow: 1
+		&::before
+			counter-increment: item
+			content: counter(item)'. '
+		&:first-child .first__item-line
+			width: 162px
+		&:nth-child(2) .first__item-line
+			width: 130px
+		&:nth-child(3) .first__item-line
+			width: 138px
+		&:last-child .first__item-line
+			width: 173px
+		&:not(:last-child)
+			margin-bottom: 40px
+	&__text
+		font-family: $FONT-MEDIUM
+		font-size: 20px
+		font-weight: 500
+		margin-bottom: 50px
+	&__social
+		bottom: 70px
+		position: absolute
+		right: sizeParam($BIG-WRAPPER)
+	+addPoint($MAX-POINT, width, min)
+		margin-bottom: sizeParam(100, vw)
+		min-height: sizeParam($headerHeight + 640, vw)
+		padding-top: sizeParam($headerHeight, vw)
+		&__title
+			font-size: sizeParam(50, vw)
+			margin-bottom: sizeParam(40, vw)
+		&__iphone
+			margin:
+				left: sizeParam(-$firstIphoneWidth/2, vw)
+				right: sizeParam(60, vw)
+			&-img
+				width: sizeParam($firstIphoneWidth, vw)
+		&__item
+			font-size: sizeParam(17, vw)
+			padding-left: sizeParam(30, vw)
+			&-line
+				&::before
+					background-color: $COLOR-WHITE
+					border-radius: 50%
+					box-shadow: 0 0 0 sizeParam(3, vw) rgba($COLOR-GREY-94, .5), 0 0 0 sizeParam(6, vw) rgba($COLOR-GREY-94, .3)
+					height: sizeParam(21, vw)
+					width: sizeParam(21, vw)
+				&::after
+					height: sizeParam(1, vw)
+			&:first-child .first__item-line
+				width: sizeParam(162, vw)
+			&:nth-child(2) .first__item-line
+				width: sizeParam(130, vw)
+			&:nth-child(3) .first__item-line
+				width: sizeParam(138, vw)
+			&:last-child .first__item-line
+				width: sizeParam(173, vw)
+			&:not(:last-child)
+				margin-bottom: sizeParam(40, vw)
+		&__text
+			font-size: sizeParam(20, vw)
+			margin-bottom: sizeParam(50, vw)
+		&__social
+			bottom: sizeParam(70, vw)
+			right: sizeParam($BIG-WRAPPER, vw)
+	+addPoint($WRAPPER)
+		margin-bottom: sizeParam(100, from, 40, $WRAPPER)
+		&__title
+			font-size: sizeParam(50, from, 36, $WRAPPER)
+		&__text
+			font-size: sizeParam(20, from, 16, $WRAPPER)
+		&__iphone
+			margin-right: sizeParam(60, from, 0)
+			&-img
+				width: sizeParam($firstIphoneWidth, from, 118, $WRAPPER)
+		&__item
+			font-size: sizeParam(17, from, $FONT-MIN, $WRAPPER)
+			line-height: $STRING-HEAD
+			&-line
+				&::before
+					box-shadow: 0 0 0 sizeParam(3, from, 2, $WRAPPER) rgba($COLOR-GREY-94, .5), 0 0 0 sizeParam(6, from, 4, $WRAPPER) rgba($COLOR-GREY-94, .3)
+					height: sizeParam(21, from, 10, $WRAPPER)
+					width: sizeParam(21, from, 10, $WRAPPER)
+			&:first-child .first__item-line
+				width: sizeParam(162, from, 82, $WRAPPER)
+			&:nth-child(2) .first__item-line
+				width: sizeParam(130, from, 60, $WRAPPER)
+			&:nth-child(3) .first__item-line
+				width: sizeParam(138, from, 68, $WRAPPER)
+			&:last-child .first__item-line
+				width: sizeParam(173, from, 92, $WRAPPER)
+			&:not(:last-child)
+				margin-bottom: sizeParam(40, from, 5, $WRAPPER)
+	+addPoint($D)
+		margin-bottom: sizeParam(100, to, 40, $WRAPPER)
+		&__title
+			font-size: sizeParam(50, to, 36, $WRAPPER)
+		&__text
+			font-size: sizeParam(20, to, 16, $WRAPPER)
+		&__iphone
+			margin-right: sizeParam(60, to, 0)
+			&-img
+				width: sizeParam($firstIphoneWidth, to, 118, $WRAPPER)
+		&__item
+			font-size: sizeParam(17, to, $FONT-MIN, $WRAPPER)
+			&-line
+				&::before
+					box-shadow: 0 0 0 sizeParam(3, to, 2, $WRAPPER) rgba($COLOR-GREY-94, .5), 0 0 0 sizeParam(6, to, 4, $WRAPPER) rgba($COLOR-GREY-94, .3)
+					height: sizeParam(21, to, 10, $WRAPPER)
+					width: sizeParam(21, to, 10, $WRAPPER)
+			&:first-child .first__item-line
+				width: sizeParam(162, to, 82, $WRAPPER)
+			&:nth-child(2) .first__item-line
+				width: sizeParam(130, to, 60, $WRAPPER)
+			&:nth-child(3) .first__item-line
+				width: sizeParam(138, to, 68, $WRAPPER)
+			&:last-child .first__item-line
+				width: sizeParam(173, to, 92, $WRAPPER)
+			&:not(:last-child)
+				margin-bottom: sizeParam(40, from, 5, $WRAPPER)
+	+addPoint($E)
+		display: block
+		height: auto
+		min-height: auto
+		padding: sizeParam($headerHeight + 30) 0 60px
+		&__quality
+			left: auto
+			margin-bottom: 50px
+			position: relative
+			transform: none
+			top: auto
+		&__iphone
+			margin-left: 0
+		&__item
+			&-line
+				right: calc(100% - 15px)
+		&__social
+			display: none
+	+addPoint($A)
+		&__item
+			br
+				display: none

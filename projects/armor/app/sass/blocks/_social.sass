@@ -1,0 +1,18 @@
+.social
+	display: flex
+	&__item
+		display: flex
+		&:not(:last-child)
+			margin-right: 30px
+	&__icon
+		display: block
+		height: 32px
+		width: 50px
+	+addPoint($MAX-POINT, width, min)
+		&__item:not(:last-child)
+			margin-right: sizeParam(30, vw)
+		&__icon
+			height: sizeParam(32, vw)
+			width: sizeParam(40, vw)
+	// +addPoint($WRAPPER)
+	// +addPoint($D)

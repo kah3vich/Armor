@@ -1,0 +1,61 @@
+.arrow
+	display: flex
+	&__item
+		border: 1px solid $COLOR-SNOW
+		border-radius: 50%
+		height: 50px
+		width: 50px
+		&::before
+			border-top: 1px solid $COLOR-SNOW
+			content: ''
+			display: block
+			height: 10px
+			margin: auto
+			position: absolute
+			top: 50%
+			width: 10px
+		&--left
+			margin-right: 20px
+			&::before
+				border-left: 1px solid $COLOR-SNOW
+				left: calc(50% + 2.5px)
+				transform: translate(-50%, -50%) rotate(-45deg)
+		&--right
+			&::before
+				border-right: 1px solid $COLOR-SNOW
+				left: calc(50% - 2.5px)
+				transform: translate(-50%, -50%) rotate(45deg)
+		&.slick-disabled
+			border-color: $COLOR-GREY
+			&::before
+				border-color: $COLOR-GREY
+	+addPoint($MAX-POINT, width, min)
+		&__item
+			border-width: sizeParam(1, vw)
+			height: sizeParam(50, vw)
+			width: sizeParam(50, vw)
+			&::before
+				border-top-width: sizeParam(1, vw)
+				height: sizeParam(10, vw)
+				width: sizeParam(10, vw)
+			&--left
+				margin-right: sizeParam(20, vw)
+				&::before
+					border-left-width: sizeParam(1, vw)
+					left: calc(50% + #{sizeParam(2.5, vw)})
+			&--right
+				&::before
+					border-right-width: sizeParam(1, vw)
+					left: calc(50% - #{sizeParam(2.5, vw)})
+	+addPoint($WRAPPER)
+		&__item
+			height: sizeParam(50, from, 40, $WRAPPER)
+			width: sizeParam(50, from, 40, $WRAPPER)
+			&--left
+				margin-right: sizeParam(20, from, 15, $WRAPPER)
+	+addPoint($D)
+		&__item
+			height: sizeParam(50, to, 40, $WRAPPER)
+			width: sizeParam(50, to, 40, $WRAPPER)
+			&--left
+				margin-right: sizeParam(20, to, 15, $WRAPPER)

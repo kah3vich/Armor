@@ -1,0 +1,44 @@
+.types
+	padding: 90px 0 60px
+	&__title
+		font-size: 30px
+		margin-bottom: 60px
+	&__list
+		margin-bottom: 60px
+	&__item
+		display: flex
+		&-img
+			height: auto
+			margin: auto
+			max-width: 475px
+			width: 100%
+		&--dark
+			background-color: $COLOR-BLACK
+		&--white
+			background-color: $COLOR-WHITE
+	&__arrows
+		justify-content: center
+	+addPoint($MAX-POINT, width, min)
+		padding: sizeParam(90, vw) 0 sizeParam(60, vw)
+		&__title
+			font-size: sizeParam(30, vw)
+			margin-bottom: sizeParam(60, vw)
+		&__list
+			margin-bottom: sizeParam(60, vw)
+		&__item
+			&-img
+				max-width: sizeParam(475, vw)
+	+addPoint($WRAPPER)
+		padding: sizeParam(90, from, 60, $WRAPPER) 0 sizeParam(60, from, 40, $WRAPPER)
+		&__title
+			font-size: sizeParam(30, from, 26, $WRAPPER)
+			margin-bottom: sizeParam(60, from, 40, $WRAPPER)
+		&__list
+			margin-bottom: sizeParam(60, from, 30, $WRAPPER)
+	+addPoint($D)
+		padding: sizeParam(90, to, 60, $WRAPPER) 0 sizeParam(60, to, 40, $WRAPPER)
+		&__title
+			font-size: sizeParam(30, to, 26, $WRAPPER)
+			margin-bottom: sizeParam(60, to, 40, $WRAPPER)
+		&__list
+			margin-bottom: sizeParam(60, to, 30, $WRAPPER)

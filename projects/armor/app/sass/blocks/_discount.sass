@@ -1,0 +1,67 @@
+.discount
+	padding-bottom: 180px
+	&__box
+		@extend .preview__box
+		background-color: $COLOR-NO
+		border: none
+		&-img
+			@extend .preview__box-img
+			left: -50px
+			top: -40px
+			transform: none
+			width: 624px
+			.preview__wrap--revers &
+				transform: none
+	&__group
+		counter-reset: item
+	&__item
+		padding-left: 130px
+		&--number
+			&::before
+				align-items: center
+				border: 1px solid $COLOR-WHITE
+				border-radius: 50%
+				counter-increment: item
+				content: counter(item)
+				display: flex
+				font-size: sizeParam($FONT-MIN)
+				justify-content: center
+				height: 22px
+				left: 90px
+				position: absolute
+				top: 3px
+				width: 22px
+	&__code
+		font-family: $FONT-MEDIUM
+		font-weight: bold
+	+addPoint($MAX-POINT, width, min)
+		padding-bottom: sizeParam(180, vw)
+		&__box
+			&-img
+				left: sizeParam(-50, vw)
+				top: sizeParam(-40, vw)
+				width: sizeParam(624, vw)
+		&__item
+			padding-left: sizeParam(130, vw)
+			&--number
+				&::before
+					border-width: sizeParam(1, vw)
+					font-size: sizeParam($FONT-MIN, vw)
+					height: sizeParam(22, vw)
+					left: sizeParam(90, vw)
+					top: sizeParam(3, vw)
+					width: sizeParam(22, vw)
+	+addPoint($WRAPPER)
+		padding-bottom: sizeParam(180, from, 140, $WRAPPER)
+	+addPoint($G + 80)
+		&__item
+			padding-left: 40px
+			&--number
+				&::before
+					left: 0
+		&__group
+			margin-bottom: 40px
+		&__btn
+			margin-bottom: 0
+	+addPoint($D)
+		padding-bottom: sizeParam(180, to, 140, $WRAPPER)

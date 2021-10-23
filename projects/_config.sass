@@ -1,0 +1,89 @@
+// Подключение шрифтов:
+@mixin addFont($fontName, $fontWeight, $fontStyle: normal, $fontUrl: '../fonts/')
+	$totalUrl: $fontUrl + $fontName
+
+	@font-face
+		font-display: swap
+		font-family: $fontName
+		font-style: $fontStyle
+		font-weight: $fontWeight
+		src: local($fontName), url($totalUrl + '.eot?') format('eot'), url($totalUrl + '.woff2') format('woff2'), url($totalUrl + '.woff') format('woff')
+
+// Создание точки остановки:
+@mixin addPoint($size, $typePoint: width, $lenghtPoint: max)
+	@if $typePoint == width
+		@if $lenghtPoint == max
+			@media (max-width: #{$size}px)
+				@content
+
+		@else if $lenghtPoint == min
+			@media (min-width: #{$size}px)
+				@content
+
+	@else if $typePoint == height
+		@if $lenghtPoint == max
+			@media (max-height: #{$size}px)
+				@content
+
+		@else if $lenghtPoint == min
+			@media (min-height: #{$size}px)
+				@content
+
+// Стилизация полосы прокрутки:
+@mixin styleScrollbar($numberStep)
+	@if $numberStep == 1
+		&::-webkit-scrollbar
+			@content // Полоса прокрутки (скроллбар).
+
+	@else if $numberStep == 2
+		&::-webkit-scrollbar-thumb
+			@content // Ползунок скроллбара.
+
+	@else if $numberStep == 3.1
+		&::-webkit-scrollbar-button:vertical:start:decrement
+			@content // Стрелка верхняя по вертикали.
+
+	@else if $numberStep == 3.2
+		&::-webkit-scrollbar-button:vertical:end:increment
+			@content // Стрелка нижняя по вертикали.
+
+	@else if $numberStep == 3.3
+		&::-webkit-scrollbar-button:horizontal:start:decrement
+			@content // Стрелка верхняя по горизонтали.
+
+	@else if $numberStep == 3.4
+		&::-webkit-scrollbar-button:horizontal:end:increment
+			@content // Стрелка нижняя по горизонтали.
+
+// Управление размерами свойств, в стилях элемента:
+@function sizeParam($paramStart, $type: px, $paramEnd: 0, $point: $GWIDTH)
+	$addSize: $paramStart - $paramEnd
+	$addMobSize: ($addSize*2)*0.7
+
+	@if $type == 'em' and $paramEnd == 0
+		$paramEnd: 16
+	@else if $type == vw and $paramEnd == 0
+		$paramEnd: $GWIDTH
+
+	@if $type == px
+		@return #{$paramStart}px
+	@else if $type == 'em'
+		@return $paramStart*$paramEnd
+	@else if $type == '%'
+		@return (($paramStart*100%)/$paramEnd)
+	@else if $type == '%%'
+		@return (($paramStart*$paramEnd)/100)
+	@else if $type == vw
+		@return (($paramStart*100vw)/$paramEnd)
+	@else if $type == vh
+		@return (($paramStart*100vh)/$paramEnd)
+	@else if $type == null
+		@return (($paramStart*100)/$paramEnd)
+	@else if $type == from
+		@return calc(#{$paramEnd}px + #{$addSize} * (100vw/#{$point}))
+	@else if $type == from-null
+		@return (#{$paramEnd}px + #{$addSize} * (100vw/#{$point}))
+	@else if $type == to
+		@return calc(#{$paramEnd}px + #{$addMobSize} * ((100vw - #{$MIN-BODY}px)/#{$point}))
+	@else if $type == to-null
+		@return (#{$paramEnd}px + #{$addMobSize} * ((100vw - #{$MIN-BODY}px)/#{$point}))

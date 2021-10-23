@@ -1,0 +1,43 @@
+.in-youtube
+	padding: 120px 0 75px
+	&__title
+		@extend .pain__title
+		margin-bottom: 50px
+	&__slider
+		background: linear-gradient(180deg, #17203F 0%, #11131B 100%)
+		margin-bottom: 30px
+		padding: 60px 0
+	&__item
+		padding: 0 20px
+	&__video
+		min-height: 470px
+		width: 100%
+	&__arrows
+		justify-content: center
+	+addPoint($MAX-POINT, width, min)
+		padding: sizeParam(120, vw) 0 sizeParam(75, vw)
+		&__title
+			margin-bottom: sizeParam(50, vw)
+		&__slider
+			margin-bottom: sizeParam(30, vw)
+			padding: sizeParam(60, vw) 0
+		&__item
+			padding: 0 sizeParam(20, vw)
+		&__video
+			min-height: sizeParam(470, vw)
+	+addPoint($WRAPPER)
+		padding-bottom: sizeParam(75, from, 40, $WRAPPER)
+		&__slider
+			padding: sizeParam(60, from, 40, $WRAPPER) 0
+		&__item
+			padding: 0 sizeParam(20, from, 10, $WRAPPER)
+		&__video
+			min-height: sizeParam(470, from, 220, $WRAPPER)
+	+addPoint($D)
+		padding-bottom: sizeParam(75, to, 40, $WRAPPER)
+		&__slider
+			padding: sizeParam(60, to, 40, $WRAPPER) 0
+		&__item
+			padding: 0 sizeParam(20, to, 10, $WRAPPER)
+		&__video
+			min-height: sizeParam(470, to, 220, $WRAPPER)

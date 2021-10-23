@@ -1,0 +1,65 @@
+.photos
+	padding: 110px 0 60px
+	&__title
+		@extend .pain__title
+		margin-bottom: 60px
+	&__gallery
+		align-items: flex-start
+		display: flex
+		flex-wrap: wrap
+		margin-bottom: 40px
+		max-height: sizeParam($galeryItem*2)
+		overflow: hidden
+		&-item
+			height: sizeParam($galeryItem)
+			overflow: hidden
+			width: percentage(1/3)
+			&:nth-child(5n+1), &:nth-child(5n+2)
+				width: percentage(1/2)
+		&-img
+			height: auto
+			margin-left: -5%
+			width: 110%
+	&__more
+		border: none
+		display: block
+		margin: 0 auto
+		text-decoration: underline
+	+addPoint($MAX-POINT, width, min)
+		padding: sizeParam(110, vw) 0 sizeParam(60, vw)
+		&__title
+			margin-bottom: sizeParam(60, vw)
+		&__gallery
+			margin-bottom: sizeParam(40, vw)
+			max-height: sizeParam($galeryItem*2, vw)
+			&-item
+				height: sizeParam($galeryItem, vw)
+	+addPoint($WRAPPER)
+		padding: sizeParam(110, from, 20, $WRAPPER) 0 sizeParam(60, from, 40, $WRAPPER)
+		&__gallery
+			max-height: sizeParam($galeryItem*2, from, 300, $WRAPPER)
+			&-item
+				height: sizeParam($galeryItem, from, 150, $WRAPPER)
+	+addPoint($D)
+		padding: sizeParam(110, to, 20, $WRAPPER) 0 sizeParam(60, to, 40, $WRAPPER)
+		&__gallery
+			max-height: sizeParam($galeryItem*2, to, 300, $WRAPPER)
+			&-item
+				height: sizeParam($galeryItem, to, 150, $WRAPPER)
+	+addPoint($C)
+		&__gallery
+			max-height: sizeParam(300, from, 240, $C)
+			&-item
+				height: sizeParam(150, from, 120, $C)
+				width: percentage(1/2)
+			&-img
+				height: 100%
+				left: 50%
+				margin: 0
+				transform: translateX(-50%)
+				width: auto
+	+addPoint($B)
+		&__gallery
+			max-height: sizeParam(300, to, 240, $C)
+			&-item
+				height: sizeParam(150, to, 120, $C)

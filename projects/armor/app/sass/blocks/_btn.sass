@@ -1,0 +1,24 @@
+.btn
+	align-items: center
+	border: 2px solid $COLOR-WHITE
+	border-radius: sizeParam($BD-RADIUS)
+	display: inline-flex
+	font-size: 16px
+	justify-content: center
+	height: 48px
+	padding: 0 40px
+	&--white
+		background-color: $COLOR-WHITE
+		color: $COLOR-DARK
+		&:hover
+			color: $COLOR-WHITE
+	&:hover
+		background-color: #191E47
+	+addPoint($MAX-POINT, width, min)
+		border-width: sizeParam(2, vw)
+		border-radius: sizeParam($BD-RADIUS, vw)
+		font-size: sizeParam(16, vw)
+		height: sizeParam(48, vw)
+		padding: 0 sizeParam(40, vw)
+	// +addPoint($WRAPPER)
+	// +addPoint($D)

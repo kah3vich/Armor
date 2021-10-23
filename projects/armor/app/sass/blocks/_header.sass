@@ -1,0 +1,63 @@
+.header
+	border-bottom: 1px solid $COLOR-DARK-GREY-43
+	display: flex
+	justify-content: space-between
+	height: sizeParam($headerHeight)
+	margin-bottom: sizeParam(-$headerHeight)
+	z-index: 100
+	&__logo
+		border-right: 1px solid $COLOR-DARK-GREY-43
+		display: flex
+		flex-shrink: 0
+		margin-right: auto
+		width: 230px
+		&-img
+			height: auto
+			margin: auto
+			width: sizeParam($headerLogo)
+	&__nav
+		display: flex
+		width: sizeParam(1000, '%', $WRAPPER)
+	&__link
+		align-items: center
+		display: flex
+		font-size: 17px
+		flex-shrink: 0
+		justify-content: center
+		padding: 0 24px
+		&:nth-last-child(2)
+			margin-right: auto
+		&:last-child
+			border-left: 1px solid $COLOR-DARK-GREY-43
+			width: 230px
+	+addPoint($MAX-POINT, width, min)
+		border-bottom-width: sizeParam(1, vw)
+		height: sizeParam($headerHeight, vw)
+		&__logo
+			border-right-width: sizeParam(1, vw)
+			margin-right: sizeParam(230, vw)
+			width: sizeParam(230, vw)
+			&-img
+				width: sizeParam($headerLogo, vw)
+		&__link
+			font-size: sizeParam(17, vw)
+			padding: 0 sizeParam(24, vw)
+			&:last-child
+				border-left-width: sizeParam(1, vw)
+				width: sizeParam(230, vw)
+	+addPoint($G)
+		&__nav
+			width: auto
+	+addPoint($WRAPPER)
+		&__logo, &__link:last-child
+			width: sizeParam(230, from, $headerLogo + 40, $WRAPPER)
+	+addPoint($F)
+		border-bottom: none
+		&__logo
+			border-right: none
+		&__nav
+			display: none
+	+addPoint($D)
+		&__logo
+			margin-right: 0
+			width: sizeParam(230, to, $headerLogo + 40, $WRAPPER)

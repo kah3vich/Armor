@@ -1,0 +1,195 @@
+.footer
+	background-color: $COLOR-DARK-BLUE
+	padding: 80px 0 40px
+	&__title
+		font-size: 35px
+		margin-bottom: 50px
+		text-align: center
+	&__whatsapp
+		display: block
+		margin: 0 auto 80px
+	&__map
+		margin-bottom: 100px
+	&__cities
+		align-items: flex-start
+		display: flex
+		flex-wrap: wrap
+	&__city
+		margin-bottom: 70px
+		width: percentage(1/3.25)
+		&--x2, &--x3
+			align-items: flex-start
+			display: flex
+			flex-wrap: wrap
+		&--x2
+			width: percentage(2/3)
+		&--x3
+			width: 100%
+		&-name
+			font-family: $FONT-MEDIUM
+			font-size: 30px
+			font-weight: 500
+			margin:
+				bottom: 15px
+				right: auto
+			padding: 0 10px 0
+		&:not(:last-child)
+			margin-right: auto
+	&__item
+		color: rgba($COLOR-WHITE, .8)
+		font-family: $FONT-MEDIUM
+		font-size: 15px
+		font-weight: 500
+		line-height: 2
+		padding: 0 10px
+		width: 100%
+		&-strong
+			color: $COLOR-WHITE
+			display: block
+			line-height: $STRING-TEXT
+			margin-bottom: 16px
+			text-transform: uppercase
+			white-space: nowrap
+		.footer__city--x2 > &
+			width: percentage(1/2)
+		.footer__city--x3 > &
+			width: percentage(1/3.25)
+		&:not(:last-child)
+			margin-right: auto
+	&__group
+		align-items: center
+		display: flex
+		&--up
+			border-bottom: 1px solid rgba($COLOR-WHITE, .1)
+			margin-bottom: 40px
+			width: 100%
+		&--down
+			border-top: 1px solid rgba($COLOR-WHITE, .1)
+			font-family: $FONT-LIGHT
+			font-size: 15px
+			font-weight: 300
+			justify-content: space-between
+			padding-top: 30px
+	&__more
+		display: none
+		height: 50px
+		padding: 0 10px
+		&::before
+			content: 'Показать все'
+			font-family: $FONT-MEDIUM
+			font-size: 15px
+			font-weight: 500
+			margin-right: 30px
+		&::after
+			border:
+				left: 1px solid $COLOR-SNOW
+				top: 1px solid $COLOR-SNOW
+			content: ''
+			display: block
+			height: 10px
+			margin: auto
+			position: absolute
+			right: 10px
+			top: calc(50% - 2.5px)
+			transform: translateY(-50%) rotate(-135deg)
+			width: 10px
+		.footer__city--x3.is-active &::after
+			top: calc(50% + 2.5px)
+			transform: translateY(-50%) rotate(45deg)
+	&__social
+		order: 1
+	+addPoint($MAX-POINT, width, min)
+		padding: sizeParam(80, vw) 0 sizeParam(40, vw)
+		&__title
+			font-size: sizeParam(35, vw)
+			margin-bottom: sizeParam(50, vw)
+		&__whatsapp
+			margin: 0 auto sizeParam(80, vw)
+		&__map
+			margin-bottom: sizeParam(100, vw)
+		&__city
+			margin-bottom: sizeParam(70, vw)
+			&-name
+				font-size: sizeParam(30, vw)
+				margin-bottom: sizeParam(15, vw)
+				padding: 0 sizeParam(10, vw) 0
+		&__item
+			font-size: sizeParam(15, vw)
+			padding: 0 sizeParam(10, vw)
+			&-strong
+				margin-bottom: sizeParam(16, vw)
+		&__group
+			&--up
+				border-bottom-width: sizeParam(1, vw)
+				margin-bottom: sizeParam(40, vw)
+			&--down
+				border-top-width: sizeParam(1, vw)
+				font-size: sizeParam(15, vw)
+				padding-top: sizeParam(30, vw)
+	+addPoint($WRAPPER)
+		&__title
+			font-size: sizeParam(35, from, 26, $WRAPPER)
+		&__map
+			margin: 0 -20px sizeParam(100, from, 80, $WRAPPER)
+			width: calc(100% + 40px)
+		&__city
+			margin-bottom: sizeParam(70, from, 40, $WRAPPER)
+			&-name
+				font-size: sizeParam(30, from, 20, $WRAPPER)
+		&__item
+			font-size: sizeParam(15, from, 14, $WRAPPER)
+		&__group
+			&--up
+				margin-bottom: sizeParam(40, from, 20, $WRAPPER)
+	+addPoint($E)
+		&__city
+			display: block
+			width: 100%
+			&-name
+				margin-bottom: 0
+				padding: 0
+			&--x3
+				max-height: sizeParam(280, from, 240, $E)
+				overflow: hidden
+				&.is-active
+					max-height: 1000px
+		&__item
+			padding: 0
+			width: 100%
+			.footer__city--x3 > &
+				width: 100%
+			&:not(:last-child)
+				margin-bottom: 20px
+		&__more
+			display: block
+	+addPoint(840)
+		&__group
+			&--down
+				display: block
+		&__copy
+			display: none
+		&__social
+			margin-bottom: 30px
+	+addPoint($D)
+		&__title
+			font-size: sizeParam(35, to, 26, $WRAPPER)
+		&__map
+			margin-bottom: sizeParam(100, to, 80, $WRAPPER)
+		&__city
+			margin-bottom: sizeParam(70, to, 40, $WRAPPER)
+			&--x3
+				max-height: sizeParam(280, to, 240, $E)
+			&-name
+				font-size: sizeParam(30, to, 20, $WRAPPER)
+		&__item
+			font-size: sizeParam(15, to, 14, $WRAPPER)
+		&__group
+			&--up
+				margin-bottom: sizeParam(40, to, 20, $WRAPPER)
+	+addPoint($C)
+		&__title br
+			display: none
+	+addPoint($A)
+		&__more
+			&::before
+				display: none

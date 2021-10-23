@@ -1,0 +1,73 @@
+// Курсоры:
+$CURSOR-DEFAULT: default
+$CURSOR-POINTER: pointer
+
+// Общие настройки текста:
+$FONT-ADD: sans-serif // Дополнительный (запасной) шрифт.
+$FONT-GENERAL: 'TTNorms-Regular', $FONT-ADD // Основной используемый шрифт.
+$FONT-MEDIUM: 'TTNorms-Medium', $FONT-ADD
+$FONT-LIGHT: 'TTNorms-Light', $FONT-ADD
+$FONT-MIN: 12 // Минимальный размер шрифта.
+
+$STRING-DEFAULT: 1 // Стандартный (равный размеру шрифта) межстрочный интервал.
+$STRING-HEAD: 1.2 // Межстрочный интервал для заголовков.
+$STRING-TEXT: 1.4 // Межстрочный интервал для абзацев.
+
+// Велечины измерения:
+$MIN-BODY: 320 // Минимальная ширина тела сайта.
+$MAX-BODY: 1920 // Максимальная ширина тела сайта.
+$SMALL-WRAPPER: 20 // Минимальный размер отступов от контентной части сайта.
+$BIG-WRAPPER: 150 // Максимальный размер отступов от контентной части сайта.
+$GWIDTH: $MAX-BODY // Ширина макета.
+
+$WRAPPER: 1440
+$WRAPPER-BOX: ($WRAPPER - ($BIG-WRAPPER*2) + ($SMALL-WRAPPER*2)) // Текущая используемая ширина.
+$BD-RADIUS: 24 // Радиус скругления углов.
+
+// Точки остановки:
+$A: 480
+$B: 576
+$C: 640
+$D: 767
+$E: 960
+$F: 1024
+$G: 1200
+$H: 1440
+$I: 1600
+$MAX-POINT: $GWIDTH + 1
+
+// Настройка плавности перехода состояния элемента:
+$TIME: 0.4s
+$TYPE-CURRENT: ease-out
+$TYPE-DEFAULT: linear
+$TRS: $TIME $TYPE-CURRENT
+$TRS-NULL: 0s $TYPE-DEFAULT
+
+// Палитра цветов:
+$COLOR-BLACK: #000
+$COLOR-DARK: #0F0F0F
+$COLOR-DARK-BLUE: #09112E
+$COLOR-DARK-GREY-28: #282828
+$COLOR-DARK-GREY-32: #323232
+$COLOR-DARK-GREY-43: #434343
+$COLOR-DARK-GREY-42: #424242
+$COLOR-GREY-75: #757575
+$COLOR-GREY-6C: #6C6C6C
+$COLOR-GREY-9A: #9A9A9A
+$COLOR-GREY-9F: #9F9F9F
+$COLOR-GREY-94: #949494
+$COLOR-GREY: #787A7C
+$COLOR-NO: transparent
+$COLOR-SNOW: #F3F3F3
+$COLOR-WHITE: #fff
+
+$COLOR-ACCENT: lightgrey
+
+// Переменные блоков:
+$headerHeight: 80
+$headerLogo: 124
+$glareSize: 280
+$glareMinSize: 160
+$glareAngle: 168deg
+$firstIphoneWidth: 198
+$galeryItem: 300

@@ -1,0 +1,99 @@
+.devices
+	padding: 80px 0 90px
+	&__title
+		font-size: 25px
+		margin-bottom: 80px
+		text-align: right
+	&__list
+		counter-reset: item
+		display: flex
+	&__item
+		background: center no-repeat
+		background-size: cover
+		align-items: center
+		display: flex
+		flex-direction: column
+		font-family: $FONT-MEDIUM
+		font-size: 17px
+		font-weight: 500
+		justify-content: flex-end
+		height: 385px
+		padding-bottom: 40px
+		width: percentage(1/5)
+		span
+			z-index: 2
+		&::before
+			border-bottom: 1px solid $COLOR-GREY-75
+			counter-increment: item
+			content: '0'counter(item)
+			font-family: $FONT-LIGHT
+			font-weight: 300
+			margin-bottom: 5px
+			opacity: .5
+			padding-bottom: 10px
+			text-align: center
+			width: 48px
+			z-index: 2
+		&::after
+			background-color: $COLOR-DARK
+			content: ''
+			display: block
+			height: 100%
+			left: 0
+			opacity: .5
+			position: absolute
+			top: 0
+			width: 100%
+			z-index: 1
+		&:hover
+			&::after
+				opacity: 0
+		&--phone
+			background-image: url(../img/devices/phone.png)
+		&--laptop
+			background-image: url(../img/devices/laptop.png)
+		&--watch
+			background-image: url(../img/devices/watch.png)
+		&--tablet
+			background-image: url(../img/devices/tablet.png)
+		&--other
+			background-image: url(../img/devices/other.png)
+	+addPoint($MAX-POINT, width, min)
+		padding: sizeParam(80, vw) 0 sizeParam(90, vw)
+		&__title
+			font-size: sizeParam(25, vw)
+			margin-bottom: sizeParam(80, vw)
+		&__item
+			font-size: sizeParam(17, vw)
+			height: sizeParam(385, vw)
+			padding-bottom: sizeParam(40, vw)
+			&::before
+				border-bottom-width: sizeParam(1, vw)
+				margin-bottom: sizeParam(5, vw)
+				padding-bottom: sizeParam(10, vw)
+				width: sizeParam(48, vw)
+	+addPoint($WRAPPER)
+		padding-bottom: sizeParam(90, from, 60, $WRAPPER)
+		&__title
+			font-size: sizeParam(25, from, 22, $WRAPPER)
+			text-align: left
+		&__item
+			height: sizeParam(385, from, 260, $WRAPPER)
+	+addPoint($WRAPPER-BOX)
+		&__list
+			flex-wrap: wrap
+		&__item
+			width: percentage(1/3)
+			&--tablet, &--other
+				width: percentage(1/2)
+	+addPoint($D)
+		padding-bottom: sizeParam(90, to, 60, $WRAPPER)
+		&__title
+			font-size: sizeParam(25, to, 22, $WRAPPER)
+		&__item
+			height: sizeParam(385, to, 260, $WRAPPER)
+	+addPoint($D)
+		&__item
+			width: percentage(1/2)
+			&--other
+				width: 100%

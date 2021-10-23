@@ -1,0 +1,250 @@
+.preview
+	padding: 80px 0 120px
+	&__wrap
+		align-items: flex-start
+		display: flex
+		&--revers
+			align-items: center
+	&__box
+		background-color: $COLOR-BLACK
+		border: 10px solid $COLOR-DARK-GREY-32
+		height: 548px
+		display: block
+		margin:
+			left: 100px
+			top: 90px
+		width: 418px
+		position: relative
+		&::before
+			background: url('../img/preview/cube.svg') repeat
+			content: ''
+			display: block
+			height: 290px
+			left: -100px
+			position: absolute
+			top: -100px
+			width: 290px
+			z-index: -1
+		&--mobile
+			display: none
+		&-img-1 
+			position: absolute
+			top: -47px
+			left: 107px
+		&-img-2 
+			position: absolute
+			top: 106px
+			left: 53px
+		&-img-3 
+			position: absolute
+			top: 44px
+			left: 215px
+		&-img-4
+			position: absolute
+			top: -78px
+			left: 131px
+		&-img-6
+			position: absolute
+			top: 35px
+			left: 220px
+		&-img-5
+			position: absolute
+			top: 78px
+			left: 51px
+		&-img-7
+			position: absolute
+			top: -51px
+			left: 119px
+		&-img-8
+			position: absolute
+			top: 113px
+			left: 68px
+		&-img-9
+			position: absolute
+			top: 29px
+			left: 220px
+			.preview__wrap--revers &
+				transform: translateX(-50%)
+		.preview__wrap--revers &
+			order: -1
+			margin:
+				left: 90px
+				right: 100px
+	&__content
+		flex-grow: 1
+		padding-top: 50px
+		.preview__wrap--revers &
+			padding-top: 0
+	&__glare
+		left: 60%
+		top: 50%
+		transform: rotate($glareAngle) translate(50%, 50%)
+		z-index: -1
+	&__subtitle
+		border-bottom: 2px solid $COLOR-DARK-GREY-32
+		color: $COLOR-DARK-GREY-42
+		display: inline-block
+		font-size: 15px
+		margin-bottom: 40px
+		padding:
+			bottom: 15px
+			right: 40px
+	&__title
+		font-size: 30px
+		margin-bottom: 50px
+		padding-left: 40px
+	&__group
+		margin-bottom: 60px
+		.preview--last &
+			margin-bottom: 0
+	&__text
+		font-size: 20px
+		padding-left: 90px
+		&:not(:last-child)
+			margin-bottom: 20px
+	&__button
+		&--whatsapp
+			margin:
+				left: 90px
+				right: 20px
+	+addPoint($MAX-POINT, width, min)
+		padding: sizeParam(80, vw) 0 sizeParam(120, vw)
+		&__box
+			border-width: sizeParam(10, vw)
+			height: sizeParam(548, vw)
+			margin:
+				left: sizeParam(100, vw)
+				top: sizeParam(90, vw)
+			width: sizeParam(418, vw)
+			&::before
+				height: sizeParam(290, vw)
+				left: sizeParam(-100, vw)
+				top: sizeParam(-100, vw)
+				width: sizeParam(290, vw)
+			&-img
+				width: sizeParam(249, vw)
+			.preview__wrap--revers &
+				margin:
+					left: sizeParam(90, vw)
+					right: sizeParam(100, vw)
+		&__content
+			padding-top: sizeParam(50, vw)
+		&__subtitle
+			border-bottom-width: sizeParam(2, vw)
+			font-size: sizeParam(15, vw)
+			margin-bottom: sizeParam(40, vw)
+			padding:
+				bottom: sizeParam(15, vw)
+				right: sizeParam(40, vw)
+		&__title
+			font-size: sizeParam(30, vw)
+			margin-bottom: sizeParam(50, vw)
+			padding-left: sizeParam(40, vw)
+		&__group
+			margin-bottom: sizeParam(60, vw)
+		&__text
+			font-size: sizeParam(20, vw)
+			padding-left: sizeParam(90, vw)
+			&:not(:last-child)
+				margin-bottom: sizeParam(20, vw)
+		&__button
+			&--whatsapp
+				margin:
+					left: sizeParam(90, vw)
+					right: sizeParam(20, vw)
+	+addPoint($WRAPPER)
+		padding: sizeParam(80, from, 40, $WRAPPER) 0 sizeParam(120, from, 40, $WRAPPER)
+		&__title
+			font-size: sizeParam(30, from, 26, $WRAPPER)
+			margin-bottom: sizeParam(50, from, 30, $WRAPPER)
+			padding-left: sizeParam(40, from, 0, $WRAPPER)
+		&__box
+			height: sizeParam(548, from, 280, $WRAPPER)
+			margin:
+				left: sizeParam(100, from, 0, $WRAPPER)
+				top: sizeParam(90, from, 60, $WRAPPER)
+			width: sizeParam(418, from, 262, $WRAPPER)
+			&::before
+				height: sizeParam(290, from, 160, $WRAPPER)
+				left: sizeParam(-100, from, -60, $WRAPPER)
+				top: sizeParam(-100, from, -70, $WRAPPER)
+				width: sizeParam(290, from, 160, $WRAPPER)
+			&-img
+				width: sizeParam(249, from, 150, $WRAPPER)
+		&__text
+			font-size: sizeParam(20, from, 16, $WRAPPER)
+			padding-left: sizeParam(90, from, 0, $WRAPPER)
+			&:not(:last-child)
+				margin-bottom: sizeParam(20, from, 10, $WRAPPER)
+		&__button
+			&--whatsapp
+				margin:
+					left: sizeParam(90, from, 0, $WRAPPER)
+					right: sizeParam(20, from, 0, $WRAPPER)
+	+addPoint($G + 80)
+		&__wrap
+			display: block
+		&__content
+			padding-top: 0
+		&__subtitle
+			display: none
+		&__title
+			padding-left: 0
+		&__box
+			display: none
+			height: sizeParam(280, from, 250, $G + 80)
+			margin: 120px 60px 114px 0
+			width: sizeParam(262, from, 242, $G + 80)
+			&::before
+				height: sizeParam(180, from, 160, $G + 80)
+				left: auto
+				right: sizeParam(-70, from, -60, $G + 80)
+				top: -70px
+				width: sizeParam(180, from, 160, $G + 80)
+			&-img
+				top: 50%
+				transform: translate(-50%, -50%)
+				width: sizeParam(150, from, 140, $G + 80)
+				.preview__wrap--revers &
+					transform: translate(-50%, -50%)
+			&--mobile
+				display: block
+			.preview__wrap--revers &
+				margin-left: 0
+			.preview--last &
+				margin-bottom: 0
+		&__group
+			margin-bottom: 0
+		&__text
+			padding-left: 0
+		&__button
+			display: block
+			&--whatsapp
+				margin: 0 0 35px
+		&__glare
+			left: 5%
+			top: 15%
+	+addPoint($D)
+		padding: sizeParam(80, to, 40, $WRAPPER) 0
+		&--last
+			display: none
+		&__title
+			font-size: sizeParam(30, to, 26, $WRAPPER)
+			margin-bottom: sizeParam(50, to, 30, $WRAPPER)
+		&__text
+			font-size: sizeParam(20, to, 16, $WRAPPER)
+			&:not(:last-child)
+				margin-bottom: sizeParam(20, to, 10, $WRAPPER)
+		&__box
+			height: sizeParam(280, to, 250, $G + 80)
+			width: sizeParam(262, to, 242, $G + 80)
+			&::before
+				height: sizeParam(180, to, 160, $G + 80)
+				right: sizeParam(-70, to, -60, $G + 80)
+				width: sizeParam(180, to, 160, $G + 80)
+			&-img
+				width: sizeParam(150, to, 140, $G + 80)
+	+addPoint($A)
+		&__title, &__text
+			br
+				display: none
