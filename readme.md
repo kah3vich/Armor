@@ -78,21 +78,21 @@ npm install
   <tr>
     <td align="center" width="96">
       <a href="#">
-        <img src="https://raw.githubusercontent.com/kah3vich/kah3vich/a0b5aba54a9ac8c40b00b52742c4b63f76ca3e4c/assets/icon/javascript.svg" width="48" height="48" alt="JavaScript" />
+        <img src="https://raw.githubusercontent.com/kah3vich/kah3vich/main/assets/icon/javascript.svg" width="48" height="48" alt="JavaScript" />
       </a>
       <br/>
       <p>JavaScript</p>
     </td>
        <td align="center" width="96">
       <a href="#">
-        <img src="https://raw.githubusercontent.com/kah3vich/kah3vich/a0b5aba54a9ac8c40b00b52742c4b63f76ca3e4c/assets/icon/html5.svg" width="48" height="48" alt="HTML" />
+        <img src="https://raw.githubusercontent.com/kah3vich/kah3vich/main/assets/icon/html5.svg" width="48" height="48" alt="HTML" />
       </a>
       <br/>
       <p>HTML</p>
     </td>
        <td align="center" width="96">
       <a href="#">
-        <img src="https://raw.githubusercontent.com/kah3vich/kah3vich/a0b5aba54a9ac8c40b00b52742c4b63f76ca3e4c/assets/icon/scss.svg" width="48" height="48" alt="SCSS" />
+        <img src="https://raw.githubusercontent.com/kah3vich/kah3vich/main/assets/icon/scss.svg" width="48" height="48" alt="SCSS" />
       </a>
       <br/>
       <p>SCSS</p>
