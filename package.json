@@ -1,9 +1,16 @@
 {
-	"name": "gulpsystem",
-	"version": "5.0.0",
-	"description": "OptimizedHTML 5 - Lightweight Gulp Starter",
-	"main": "index.js",
-	"license": "ISC",
+	"name": "armor",
+	"type": "module",
+	"author": {
+		"url": "https://github/kah3vich",
+		"name": "kah3vich",
+		"email": "kah3vich@proton.me"
+	},
+	"license": "Apache-2.0",
+	"scripts": {
+		"dev": "gulp",
+		"build": "gulp build"
+	},
 	"devDependencies": {
 		"@babel/core": "^7.13.14",
 		"@babel/preset-env": "^7.13.12",

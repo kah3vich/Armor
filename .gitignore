@@ -1,2 +1,8 @@
-package-lock.json
-node_modules
+# ide
+.idea
+.vscode
+.DS_Store
+**/.DS_Store
+
+# deps
+node_modules/
