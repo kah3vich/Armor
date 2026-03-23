@@ -16,7 +16,6 @@
 
 - [Index](https://kah3vich.github.io/Armor/projects/armor/public/index.html)
 
-
 ## Materials
 
 - [LICENSE](.github/LICENSE)
